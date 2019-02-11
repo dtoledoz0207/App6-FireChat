@@ -1,0 +1,28 @@
+<h3>Chat</h3>
+<hr>
+
+<div class="app-mensajes" id="app-mensajes">
+
+  <div class="text-right">
+      <div class="badge badge-pill badge-primary">
+        <span>David:</span>
+        <p>Este es un mensaje</p>
+      </div>
+  </div>
+
+
+  <div>
+      <div class="badge badge-pill badge-success">
+        <span>Maria:</span>
+        <p>Saludos David Toledo</p>
+      </div>
+  </div>
+
+</div>
+
+<input type="text" 
+        class="form-control" 
+        [(ngModel)]="mensaje" 
+        name="mensaje" 
+        placeholder="Enviar mensaje..." 
+        (keyup.enter)="enviarMensaje()">
