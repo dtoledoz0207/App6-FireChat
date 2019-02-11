@@ -12,6 +12,9 @@ import { environment } from '../environments/environment';
 // COMPONENTS
 import { ChatComponent } from './components/chat/chat.component';
 
+// SERVICIOS
+import {ChatService} from './providers/chat.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { ChatComponent } from './components/chat/chat.component';
     FormsModule
   ],
   providers: [
-    { provide: FirestoreSettingsToken, useValue: {} }
+    { provide: FirestoreSettingsToken, useValue: {} },
+    ChatService
   ],
   bootstrap: [AppComponent]
 })
