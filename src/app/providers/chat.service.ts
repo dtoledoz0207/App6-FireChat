@@ -33,10 +33,11 @@ export class ChatService {
 
 
 
-  login(proveedor:string) {
+  login() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
   logout() {
+    this.usuario = {};
     this.afAuth.auth.signOut();
   }
 
@@ -60,9 +61,10 @@ export class ChatService {
 
     // Falta del uid del usuario
     let mensaje:Mensaje = {
-      nombre: "Demo",
+      nombre: this.usuario.nombre,
       mensaje: texto,
-      fecha: new Date().getTime()
+      fecha: new Date().getTime(),
+      uid: this.usuario.uid
     }
 
     return this.itemsCollection.add(mensaje);
